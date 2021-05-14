@@ -2,6 +2,10 @@ import { Component } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Home from '../home/Home';
+import HikesPage from '../cats/CatsPage';
+import HikeDetailPage from '../cat/CatDetailPage';
+import HikeAddPage from '../cat-add/CatAddPage';
+import HikeEditPage from '../cat-edit/CatEditPage';
 import {
   BrowserRouter as Router,
   Route,
@@ -26,15 +30,27 @@ class App extends Component {
                 )}
               />
 
-              <Route path="/resources" exact={true}
+              <Route path="/hikes" exact={true}
                 render={routerProps => (
-                  <div>Implement a page of resources</div>
+                  <HikesPage {...routerProps}/>
                 )}
               />
 
-              <Route path="/resources/:id"
+              <Route path="/hikes/add" exact={true}
                 render={routerProps => (
-                  <div>Implement a page for id {routerProps.match.params.id}</div>
+                  <HikeAddPage {...routerProps}/>
+                )}
+              />
+
+              <Route path="/hikes/:id" exact={true}
+                render={routerProps => (
+                  <HikeDetailPage {...routerProps}/>
+                )}
+              />
+
+              <Route path="/hikes/:id/edit" exact={true}
+                render={routerProps => (
+                  <HikeEditPage {...routerProps}/>
                 )}
               />
 

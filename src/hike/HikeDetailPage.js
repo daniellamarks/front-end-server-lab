@@ -53,14 +53,10 @@ export default class HikeDetailPage extends Component {
         <Loader loading={loading}/>
 
         <h2>{hike.name}</h2>
-        
-        <img src={hike.url} alt={hike.name}/>
-        
-        <p>Introduced in {hike.year}</p>
-        <p>Has {hike.lives} {hike.lives === 1 ? 'life' : 'lives' } remaining</p>
-        {hike.isSidekick && 'This hike is a sidekick'}
-        <p>Owned by user "{hike.userName}"</p>
-
+        <div className="Hike Detail">
+          <h2>Hike Detail Page</h2>
+        </div>
+              
         <Link to={`/hikes/${hike.id}/edit`}>
           Edit this Hike
         </Link>

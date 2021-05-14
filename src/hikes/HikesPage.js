@@ -1,23 +1,39 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import './HikeItem.css';
+import { Component } from 'react';
+import HikeList from './CatList';
+import Loader from '../common/Loader';
+import { getHikes } from '../utils/hikes-api';
+import './HikesPage.css';
 
-class HikeItem extends Component {
-  
-  render() { 
-    const hike = this.props.hike;
+export default class CatsPage extends Component {
+  state = {
+    hike: [],
+    loading: true
+  }
+
+  async componentDidMount() {
+    try {
+      const hikes = await getHikes();
+      this.setState({ hikes: hikes });
+    }
+    catch (err) {
+      console.log(err.message);
+    }
+    finally {
+      this.setState({ loading: false });
+    }
+  }
+
+  render() {
+    const { hikes, loading } = this.state;
 
     return (
-      <li className="HikeItem">
-        <Link to={`/hikes/${hike.id}`}>
-          <h2>{hike.name}</h2>
-          <img src={hike.url} alt={hike.name}/>
-          <p>Length: {hike.lengthInMiles}</p>
-        </Link>
-      </li>
+      <div className="CatsPage">
+        <Loader loading={loading}/>
+        
+        <h2>List o' Hikes</h2>
+        <HikeList hikes={hikes}/>
+      </div>
     );
   }
 
 }
- 
-export default HikeItem;

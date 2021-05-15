@@ -51,15 +51,20 @@ export default class HikeDetailPage extends Component {
     return (
       <div className="HikeDetailPage">
         {/* <Loader loading={loading}/> */}
-
-        <h2>{hike.name}</h2>
+        
         <div className="Hike Detail">
           <h2>Hike Detail Page</h2>
+          <p>Name: {hike.name}</p>
+          <p>Difficulty: {hike.difficulty}</p>
+          <p>Length In Miles: {hike.lengthInMiles}</p>
+          <p>terrain: {hike.terrain}</p>
         </div>
+
+
               
-        <Link to={`/hikes/${hike.id}/edit`}>
+        {/* <Link to={`/hikes/${hike.id}/edit`}>
           Edit this Hike
-        </Link>
+        </Link> */}
         
         {/* <button className="delete" onClick={this.handleDelete}>
           Delete this Hike

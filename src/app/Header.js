@@ -8,7 +8,7 @@ class Header extends Component {
     return (
       <header className="Header">
 
-        <h1>React App</h1>
+        <h1>Forest Parks Hikes ~React~ </h1>
         <nav>
           <NavLink to="/">Home</NavLink>
           <NavLink to="/hikes">Hikes</NavLink>

@@ -3,7 +3,7 @@ import Header from './Header';
 import Footer from './Footer';
 import Home from '../home/Home';
 import HikesPage from '../hikes/HikesPage';
-import HikeDetailPage from '../hikes/HikeDetailPage';
+import HikeDetailPage from '../hike/HikeDetailPage';
 // import HikeAddPage from '../hike-add/HikeAddPage';
 // import HikeEditPage from '../hike-edit/HikeEditPage';
 import {
@@ -16,6 +16,8 @@ import './App.css';
 
 class App extends Component {
 
+  renderHikesDetail = (routerProps) => { return <HikeDetailPage {...routerProps}/>; };
+  
   render() {
     return (
       <div className="App">
@@ -35,7 +37,7 @@ class App extends Component {
                   <HikesPage {...routerProps}/>
                 )}
               />
-{/* 
+              {/* 
               <Route path="/hikes/add" exact={true}
                 render={routerProps => (
                   <HikeAddPage {...routerProps}/>
@@ -43,9 +45,7 @@ class App extends Component {
               /> */}
 
               <Route path="/hikes/:id" exact={true}
-                render={routerProps => (
-                  <HikeDetailPage {...routerProps.match.params.id}/>
-                )}
+                render= {this.renderHikesDetail}
               />
 
               {/* <Route path="/hikes/:id/edit" exact={true}

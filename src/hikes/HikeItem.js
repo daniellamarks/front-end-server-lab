@@ -12,7 +12,7 @@ class HikeItem extends Component {
         <Link to={`/Hikes/${hike.id}`}>
           <h2>{hike.name}</h2>
           <img src={hike.url} alt={hike.name}/>
-          <p>Length: {hike.lengthInMiles}</p>
+          <p>Length: {hike.lengthInMiles} miles</p>
         </Link>
       </li>
     );

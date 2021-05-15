@@ -1,13 +1,13 @@
 import { Component } from 'react';
 import HikeList from './HikeList';
-import Loader from '../common/Loader';
+// import Loader from '../common/Loader';
 import { getHikes } from '../utils/hikes-api';
 import './HikesPage.css';
 
 export default class HikesPage extends Component {
   state = {
     hikes: [],
-    loading: true
+    // loading: true
   }
 
   async componentDidMount() {
@@ -18,18 +18,19 @@ export default class HikesPage extends Component {
     catch (err) {
       console.log(err.message);
     }
-    finally {
-      this.setState({ loading: false });
-    }
+    // finally {
+    //   this.setState({ loading: false });
+    // }
   }
 
   render() {
-    const { hikes, loading } = this.state;
+    const { hikes } = this.state;
+    //loader
     //const hikes = this.state.hikes
 
     return (
       <div className="HikesPage">
-        <Loader loading={loading}/>
+        {/* <Loader loading={loading}/> */}
         
         <h2>List o' Hikes</h2>
         <HikeList hikes={hikes}/>

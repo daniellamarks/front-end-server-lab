@@ -1,6 +1,6 @@
 import { Component } from 'react';
 // import Loader from '../common/Loader';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { getHike } from '../utils/hikes-api';
 import './HikeDetailPage.css';
 
@@ -12,6 +12,7 @@ export default class HikeDetailPage extends Component {
 
   async componentDidMount() {
     const { match } = this.props;
+    
     try {
       const hike = await getHike(match.params.id);
       this.setState({ hike: hike });

@@ -1,12 +1,12 @@
 import { Component } from 'react';
-import HikeList from './CatList';
+import HikeList from './HikeList';
 import Loader from '../common/Loader';
 import { getHikes } from '../utils/hikes-api';
 import './HikesPage.css';
 
-export default class CatsPage extends Component {
+export default class HikesPage extends Component {
   state = {
-    hike: [],
+    hikes: [],
     loading: true
   }
 
@@ -27,7 +27,7 @@ export default class CatsPage extends Component {
     const { hikes, loading } = this.state;
 
     return (
-      <div className="CatsPage">
+      <div className="HikesPage">
         <Loader loading={loading}/>
         
         <h2>List o' Hikes</h2>

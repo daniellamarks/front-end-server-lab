@@ -2,10 +2,10 @@ import { Component } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Home from '../home/Home';
-import HikesPage from '../cats/CatsPage';
-import HikeDetailPage from '../cat/CatDetailPage';
-import HikeAddPage from '../cat-add/CatAddPage';
-import HikeEditPage from '../cat-edit/CatEditPage';
+import HikesPage from '../hikes/HikesPage';
+import HikeDetailPage from '../hikes/HikeDetailPage';
+import HikeAddPage from '../hike-add/HikeAddPage';
+import HikeEditPage from '../hike-edit/HikeEditPage';
 import {
   BrowserRouter as Router,
   Route,

@@ -4,8 +4,8 @@ import Footer from './Footer';
 import Home from '../home/Home';
 import HikesPage from '../hikes/HikesPage';
 import HikeDetailPage from '../hikes/HikeDetailPage';
-import HikeAddPage from '../hike-add/HikeAddPage';
-import HikeEditPage from '../hike-edit/HikeEditPage';
+// import HikeAddPage from '../hike-add/HikeAddPage';
+// import HikeEditPage from '../hike-edit/HikeEditPage';
 import {
   BrowserRouter as Router,
   Route,
@@ -35,24 +35,24 @@ class App extends Component {
                   <HikesPage {...routerProps}/>
                 )}
               />
-
+{/* 
               <Route path="/hikes/add" exact={true}
                 render={routerProps => (
                   <HikeAddPage {...routerProps}/>
                 )}
-              />
+              /> */}
 
               <Route path="/hikes/:id" exact={true}
                 render={routerProps => (
-                  <HikeDetailPage {...routerProps}/>
+                  <HikeDetailPage {...routerProps.match.params.id}/>
                 )}
               />
 
-              <Route path="/hikes/:id/edit" exact={true}
+              {/* <Route path="/hikes/:id/edit" exact={true}
                 render={routerProps => (
                   <HikeEditPage {...routerProps}/>
                 )}
-              />
+              /> */}
 
               <Redirect to="/" />
 

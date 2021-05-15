@@ -25,6 +25,7 @@ export default class HikesPage extends Component {
 
   render() {
     const { hikes, loading } = this.state;
+    //const hikes = this.state.hikes
 
     return (
       <div className="HikesPage">

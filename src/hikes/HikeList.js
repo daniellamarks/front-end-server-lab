@@ -7,6 +7,7 @@ import './HikeList.css';
 class HikeList extends Component {
   
   render() { 
+    //from HikePage.js
     const { hikes } = this.props;
 
     return (

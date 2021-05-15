@@ -2,6 +2,8 @@ import request from 'superagent';
 
 const URL = '/api/hikes';
 
+//implement a method that fetches a list of data.
+//list of data is in /api/hikes
 export async function getHikes() {
   const response = await request.get(URL);
   return response.body;
@@ -13,7 +15,9 @@ export async function getHike(id) {
 }
 
 export async function addHike(hike) {
-  const response = await request.post(URL).send(cat);
+  const response = await request
+    .post(URL)
+    .send(hike);
   return response.body;
 }
 
@@ -23,6 +27,8 @@ export async function deleteHike(id) {
 }
 
 export async function updateHike(hike) {
-  const response = await request.put(`${URL}/${hike.id}`).send(hike);
+  const response = await request
+    .put(`${URL}/${hike.id}`)
+    .send(hike);
   return response.body;
 }

@@ -12,7 +12,7 @@ export default class HikeDetailPage extends Component {
 
   async componentDidMount() {
     const { match } = this.props;
-    
+
     try {
       const hike = await getHike(match.params.id);
       this.setState({ hike: hike });
@@ -56,6 +56,10 @@ export default class HikeDetailPage extends Component {
         <div className="Hike Detail">
           <h2>Hike Detail Page</h2>
           <p>Name: {hike.name}</p>
+          <img  
+            alt="hikes pic"
+            src={hike.url}
+          />
           <p>Difficulty: {hike.difficulty}</p>
           <p>Length In Miles: {hike.lengthInMiles}</p>
           <p>terrain: {hike.terrain}</p>

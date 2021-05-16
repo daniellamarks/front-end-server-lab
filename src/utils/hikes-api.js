@@ -14,12 +14,13 @@ export async function getHike(id) {
   return response.body;
 }
 
-// export async function addHike(hike) {
-//   const response = await request
-//     .post(URL)
-//     .send(hike);
-//   return response.body;
-// }
+export async function addHike(hike) {
+  const response = await request
+    .post(URL)
+    .statusType('json')
+    .send(hike);
+  return response.body.id;
+}
 
 // export async function deleteHike(id) {
 //   const response = await request.delete(`${URL}/${id}`);

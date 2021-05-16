@@ -1,21 +1,21 @@
-.AlbumDetailPage {
+.HikeDetailPage {
   padding: 20px;
 }
 
-.AlbumDetailPage img {
+.HikeDetailPage img {
   height: 200px;
 }
 
-.AlbumDetailPage p {
+.HikeDetailPage p {
   margin: 15px 0;
 }
 
-.AlbumDetailPage a {
+.HikeDetailPage a {
   font-size: .9rem;
   margin-right: 10px;
 }
 
-.AlbumDetailPage button.delete {
+.HikeDetailPage button.delete {
   background: 0;
   border: 0;
   text-decoration: underline;

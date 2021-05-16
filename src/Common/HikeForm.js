@@ -105,7 +105,7 @@ export default class AlbumForm extends Component {
         </p>
 
         <p>
-          <button>Add Album</button>
+          <button>Add Hike</button>
         </p>          
       </form>
     );

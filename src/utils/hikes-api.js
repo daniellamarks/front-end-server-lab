@@ -27,9 +27,9 @@ export async function addHike(hike) {
 //   return response.body;
 // }
 
-// export async function updateHike(hike) {
-//   const response = await request
-//     .put(`${URL}/${hike.id}`)
-//     .send(hike);
-//   return response.body;
-// }
+export async function updateHike(hike) {
+  const response = await request
+    .put(`${URL}/${hike.id}`)
+    .send(hike);
+  return response.body;
+}

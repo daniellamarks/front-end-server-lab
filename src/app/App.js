@@ -5,7 +5,7 @@ import Home from '../home/Home';
 import HikesPage from '../hikes/HikesPage';
 import HikeDetailPage from '../hike/HikeDetailPage';
 // import HikeAddPage from '../hike-add/HikeAddPage';
-// import HikeEditPage from '../hike-edit/HikeEditPage';
+import HikeEditPage from '../hike-edit/HikeEditPage';
 import {
   BrowserRouter as Router,
   Route,
@@ -37,12 +37,12 @@ class App extends Component {
                   <HikesPage {...routerProps}/>
                 )}
               />
-              {/* 
+              
               <Route path="/hikes/add" exact={true}
                 render={routerProps => (
-                  <HikeAddPage {...routerProps}/>
+                  <HikeEditPage {...routerProps}/>
                 )}
-              /> */}
+              />
 
               <Route path="/hikes/:id" exact={true}
                 render= {this.renderHikesDetail}

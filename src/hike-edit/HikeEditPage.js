@@ -1,6 +1,6 @@
 import { Component } from 'react';
-import HikeForm from '../common/AlbumForm';
-import { addAlbum } from '../utils/albums-api';
+import HikeForm from '../common/HikeForm';
+import { addHike } from '../utils/hikes-api';
 import './HikeEditPage.css';
 
 export default class HikeEditPage extends Component {
@@ -10,7 +10,7 @@ export default class HikeEditPage extends Component {
 
   handleEdit = async hike => {
     try {
-      const id = await addAlbum(hike);
+      const id = await addHike(hike);
       console.log(id);
     }
     catch (err) {

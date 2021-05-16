@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import HikeForm from '../common/HikeForm';
-import { updateHike, getHike } from '../utils/hiks-api';
-import './AlbumHikePage.css';
+import { updateHike, getHike } from '../utils/hikes-api';
+import './HikeEditPage.css';
 
 export default class AlbumEditPage extends Component {
   state = {

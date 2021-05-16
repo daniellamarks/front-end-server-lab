@@ -51,7 +51,7 @@ export default class HikeDetailPage extends Component {
 
     return (
       <div className="HikeDetailPage">
-        <Loader loading={loading}/>
+        {/* <Loader loading={loading}/> */}
         
         <div className="Hike Detail">
           <h2>Hike Detail Page</h2>

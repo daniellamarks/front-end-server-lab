@@ -22,10 +22,10 @@ export async function addHike(hike) {
   return response.body.id;
 }
 
-// export async function deleteHike(id) {
-//   const response = await request.delete(`${URL}/${id}`);
-//   return response.body;
-// }
+export async function deleteHike(id) {
+  const response = await request.delete(`${URL}/${id}`);
+  return response.body;
+}
 
 export async function updateHike(hike) {
   const response = await request

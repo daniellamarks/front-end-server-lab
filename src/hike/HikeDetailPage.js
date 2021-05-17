@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import Loader from '../common/Loader';
+// import Loader from '../common/Loader';
 import { Link } from 'react-router-dom';
 import { getHike, deleteHike } from '../utils/hikes-api';
 import './HikeDetailPage.css';
@@ -45,7 +45,7 @@ export default class HikeDetailPage extends Component {
   }
 
   render() {
-    const { hike, loading } = this.state;
+    const { hike } = this.state;
 
     if (!hike) return null;
 

@@ -26,7 +26,7 @@ class HikeAddPage extends Component {
 
   render() {    
 
-    const { loading } = this.state;
+    // const { loading } = this.state;
 
     return (
       <div className="HikeAddPage">

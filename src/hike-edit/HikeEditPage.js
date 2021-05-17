@@ -3,7 +3,7 @@ import HikeForm from '../common/HikeForm';
 import { updateHike, getHike } from '../utils/hikes-api';
 import './HikeEditPage.css';
 
-export default class AlbumEditPage extends Component {
+export default class HikeEditPage extends Component {
   state = {
     hike: null,
     loading: false

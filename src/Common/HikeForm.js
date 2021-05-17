@@ -2,7 +2,7 @@
 import { Component } from 'react';
 import './HikeForm.css';
 
-export default class AlbumForm extends Component {
+export default class HikeForm extends Component {
   state = {
     name: '',
     difficulty: '',
@@ -10,6 +10,13 @@ export default class AlbumForm extends Component {
     lengthInMiles: '',
     terrain: '',
     goodForDogs: '',
+  }
+
+  componentDidMount() {
+    const { hikeName } = this.props;
+    if (!hikeName) return;
+
+    this.setState(hikeName);
   }
 
   handleSubmit = e => {
@@ -45,13 +52,14 @@ export default class AlbumForm extends Component {
   render() {
 
     const { name, difficulty, url, lengthInMiles, terrain, goodForDogs } = this.state;
+    const { hikeName } = this.props;
 
     return (
       <form className="HikeForm" onSubmit={this.handleSubmit}>
         <p>
           <label>
             <span>Hike Name</span>
-            <input name="name" required placehold="Name of hike..." value={name} onChange={this.handleChangeName}
+            <input name="name" required placeholder="Name of hike..." value={name} onChange={this.handleChangeName}
             />
           </label>
         </p>
@@ -69,7 +77,7 @@ export default class AlbumForm extends Component {
           <label>
             <span>Hike Image Url</span>
             <input name="url" required placeholder="URL..."
-              value={url} onChange={this.handleChangeURL}
+              value={url} onChange={this.handleChangeUrl}
             />
           </label>
         </p>
@@ -105,8 +113,9 @@ export default class AlbumForm extends Component {
         </p>
 
         <p>
-          <button>Add Hike</button>
-        </p>          
+          <button>{hikeName ? 'Edit' : 'Add' } Hike</button>
+        </p>         
+         
       </form>
     );
   }

@@ -1,39 +1,43 @@
-// import { Component } from 'react';
-// import HikeForm from '../common/HikeForm';
-// // import Loader from '../common/Loader';
-// import { addHike } from '../utils/hikes-api';
-// import './HikeAddPage.css';
+import { Component } from 'react';
+import HikeForm from '../common/HikeForm';
+import Loader from '../common/Loader';
+import { addHike } from '../utils/hikes-api';
+import './HikeAddPage.css';
 
-// export default class CatAddPage extends Component {
-//   state = {
-//     loading: false
-//   }
+class HikeAddPage extends Component {
+  state = {
+    loading: false
+  }
 
-//   handleAdd = async catToAdd => {
-//     // because we pass router props in App.js
-//     const { history } = this.props;
+  handleAdd = async hike => {
+    const { history } = this.props;
 
-//     try {
-//       this.setState({ loading: true });
-//       // this returns the newly minted cat object
-//       const newCat = await addCat(catToAdd);
-//       // which includes its id!
-//       history.push(`/cats/${newCat.id}`);
-//     }
-//     catch (err) {
-//       this.setState({ loading: false });
-//       console.log(err.message);
-//     }
-//   }
+    try {
+      this.setState({ loading: true });
+      const newHike = await addHike(hike);
+      history.push(`/hikes/${newHike.id}`);
+      console.log(newHike);
+    }
+    catch (err) {
+      this.setState({ loading: false });
+      console.log(err.message);
+    }
+  }
 
-//   render() {    
+  render() {    
 
-//     return (
-//       <div className="CatAddPage">
-//         <h2>Add a Cat</h2>
-//         <CatForm onSubmit={this.handleAdd}/>
-//       </div>
-//     );
-//   }
+    // const { loading } = this.state;
 
-// }
+    return (
+      <div className="HikeAddPage">
+        {/* <Loader loading={loading}/> */}
+
+        <h2>Add a Hike</h2>
+        <HikeForm onSubmit={this.handleAdd}/>
+      </div>
+    );
+  }
+
+}
+
+export default HikeAddPage; 

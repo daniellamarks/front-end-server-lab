@@ -1,0 +1,53 @@
+.HikeForm  {
+  background: #E89062;;
+  padding: 20px 50px;
+  max-width: 400px;
+}
+
+.HikeForm p {
+  margin: 20px 0;
+}
+
+.HikeForm label span {
+  display: block;
+  margin-bottom: 7px;
+  font-size: .85rem;
+  text-transform: uppercase;
+}
+
+.HikeForm input, .HikeForm select, .HikeForm button {
+  width: 100%;
+  height: 30px;
+  box-sizing: border-box;
+}
+
+.HikeForm input[type=checkbox] {
+  margin-left: 0;
+  margin-right: 5px;
+  width: 15px;
+  height: 15px;
+  box-sizing: border-box;
+}
+
+.HikeForm .vertically-centered {
+  display: flex;
+  align-items: center;
+  text-transform: initial;
+}
+
+.HikeForm select:invalid {
+  color: gray;
+}
+
+.HikeForm option:disabled {
+  color: gray;
+}
+
+.HikeForm button {
+  background: #65A7AB;
+  border: 1px solid #1F4E5C;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}

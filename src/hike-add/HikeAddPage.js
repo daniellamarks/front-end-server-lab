@@ -9,14 +9,14 @@ class HikeAddPage extends Component {
     loading: false
   }
 
-  handleAdd = async hike => {
+  handleAdd = async (hike) => {
     const { history } = this.props;
 
     try {
       this.setState({ loading: true });
       const newHike = await addHike(hike);
       history.push(`/hikes/${newHike.id}`);
-      console.log(newHike);
+      // console.log(newHike);
     }
     catch (err) {
       this.setState({ loading: false });

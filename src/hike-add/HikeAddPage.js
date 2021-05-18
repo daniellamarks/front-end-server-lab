@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import HikeForm from '../common/HikeForm';
+import HikeForm from '../common/HikeForm.js';
 // import Loader from '../common/Loader';
 import { addHike } from '../utils/hikes-api';
 import './HikeAddPage.css';
